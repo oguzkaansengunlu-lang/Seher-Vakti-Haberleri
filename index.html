@@ -28,8 +28,27 @@
             <div class="haber-karti">
                 <img src="ekonomi.jpeg" alt="Haber Görseli">
                 <h3>Ekonomide Yeni Dönem</h3>
-                <p>Ekonomide yaşanan son gelişmeler ve piyasa analizleri...</p>
-            </div>
+                <p>Ekonomide yaşanan son gelişmeler ve piyasa analizleri... Güncel döviz kurları : Dolar 41,16tl Euro 48,02tl</p>
+             <button class="haber-goster">Haberi Göster</button>
+</div>
+
+<script>
+  // Tüm "Haberi Göster" butonlarını seçiyoruz
+  const butonlar = document.querySelectorAll('.haber-goster');
+  
+  butonlar.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const icerik = btn.previousElementSibling; // bir üstteki <p> elementini bul
+      if (icerik.style.display === 'none') {
+        icerik.style.display = 'block'; // göster
+        btn.textContent = 'Haberi Gizle'; // buton metni değişir
+      } else {
+        icerik.style.display = 'none'; // gizle
+        btn.textContent = 'Haberi Göster';
+      }
+    });
+  });
+</script>
 
             <div class="haber-karti">
                 <img src="spor.jpg" alt="Haber Görseli">
